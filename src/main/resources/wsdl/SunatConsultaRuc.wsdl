@@ -1,0 +1,606 @@
+<!--
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:axis2wrapped="http://service.consultaruc.registro.servicio2.sunat.gob.pe"  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:intf="http://wscr.sunat.gob.pe:90/cl-ti-iaconsulruc-ws/services/ConsultaRuc" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="http://bean.consultaruc.registro.servicio2.sunat.gob.pe" xmlns:impl="http://wscr.sunat.gob.pe:90/cl-ti-iaconsulruc-ws/services/ConsultaRuc" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://wscr.sunat.gob.pe:90/cl-ti-iaconsulruc-ws/services/ConsultaRuc">
+   <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://bean.consultaruc.registro.servicio2.sunat.gob.pe">
+         <import namespace="http://wscr.sunat.gob.pe:90/cl-ti-iaconsulruc-ws/services/ConsultaRuc"/>
+         <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+         <complexType name="BeanDdp">
+            <sequence>
+               <element name="cod_dep" nillable="true" type="string"/>
+               <element name="cod_dist" nillable="true" type="string"/>
+               <element name="cod_prov" nillable="true" type="string"/>
+               <element name="ddp_ciiu" nillable="true" type="string"/>
+               <element name="ddp_doble" nillable="true" type="string"/>
+               <element name="ddp_estado" nillable="true" type="string"/>
+               <element name="ddp_fecact" nillable="true" type="string"/>
+               <element name="ddp_fecalt" nillable="true" type="string"/>
+               <element name="ddp_fecbaj" nillable="true" type="string"/>
+               <element name="ddp_flag22" nillable="true" type="string"/>
+               <element name="ddp_identi" nillable="true" type="string"/>
+               <element name="ddp_inter1" nillable="true" type="string"/>
+               <element name="ddp_lllttt" nillable="true" type="string"/>
+               <element name="ddp_mclase" nillable="true" type="string"/>
+               <element name="ddp_nombre" nillable="true" type="string"/>
+               <element name="ddp_nomvia" nillable="true" type="string"/>
+               <element name="ddp_nomzon" nillable="true" type="string"/>
+               <element name="ddp_numer1" nillable="true" type="string"/>
+               <element name="ddp_numreg" nillable="true" type="string"/>
+               <element name="ddp_numruc" nillable="true" type="string"/>
+               <element name="ddp_reacti" nillable="true" type="string"/>
+               <element name="ddp_refer1" nillable="true" type="string"/>
+               <element name="ddp_secuen" type="int"/>
+               <element name="ddp_tamano" nillable="true" type="string"/>
+               <element name="ddp_tipvia" nillable="true" type="string"/>
+               <element name="ddp_tipzon" nillable="true" type="string"/>
+               <element name="ddp_tpoemp" nillable="true" type="string"/>
+               <element name="ddp_ubigeo" nillable="true" type="string"/>
+               <element name="ddp_userna" nillable="true" type="string"/>
+               <element name="desc_ciiu" nillable="true" type="string"/>
+               <element name="desc_dep" nillable="true" type="string"/>
+               <element name="desc_dist" nillable="true" type="string"/>
+               <element name="desc_estado" nillable="true" type="string"/>
+               <element name="desc_flag22" nillable="true" type="string"/>
+               <element name="desc_identi" nillable="true" type="string"/>
+               <element name="desc_numreg" nillable="true" type="string"/>
+               <element name="desc_prov" nillable="true" type="string"/>
+               <element name="desc_tamano" nillable="true" type="string"/>
+               <element name="desc_tipvia" nillable="true" type="string"/>
+               <element name="desc_tipzon" nillable="true" type="string"/>
+               <element name="desc_tpoemp" nillable="true" type="string"/>
+               <element name="esActivo" type="boolean"/>
+               <element name="esHabido" type="boolean"/>
+            </sequence>
+         </complexType>
+         <complexType name="BeanDds">
+            <sequence>
+               <element name="dds_aparta" nillable="true" type="string"/>
+               <element name="dds_asient" nillable="true" type="string"/>
+               <element name="dds_califi" nillable="true" type="string"/>
+               <element name="dds_centro" nillable="true" type="string"/>
+               <element name="dds_cierre" nillable="true" type="string"/>
+               <element name="dds_comext" nillable="true" type="string"/>
+               <element name="dds_consti" nillable="true" type="string"/>
+               <element name="dds_contab" nillable="true" type="string"/>
+               <element name="dds_docide" nillable="true" type="string"/>
+               <element name="dds_domici" nillable="true" type="string"/>
+               <element name="dds_ejempl" nillable="true" type="string"/>
+               <element name="dds_factur" nillable="true" type="string"/>
+               <element name="dds_fecact" nillable="true" type="string"/>
+               <element name="dds_fecnac" nillable="true" type="string"/>
+               <element name="dds_fecven" nillable="true" type="string"/>
+               <element name="dds_ficha" nillable="true" type="string"/>
+               <element name="dds_inicio" nillable="true" type="string"/>
+               <element name="dds_licenc" nillable="true" type="string"/>
+               <element name="dds_motbaj" nillable="true" type="string"/>
+               <element name="dds_motemi" nillable="true" type="string"/>
+               <element name="dds_nacion" nillable="true" type="string"/>
+               <element name="dds_nfolio" nillable="true" type="string"/>
+               <element name="dds_nomcom" nillable="true" type="string"/>
+               <element name="dds_nrodoc" nillable="true" type="string"/>
+               <element name="dds_numfax" nillable="true" type="string"/>
+               <element name="dds_numruc" nillable="true" type="string"/>
+               <element name="dds_orient" nillable="true" type="string"/>
+               <element name="dds_paispa" nillable="true" type="string"/>
+               <element name="dds_pasapo" nillable="true" type="string"/>
+               <element name="dds_patron" nillable="true" type="string"/>
+               <element name="dds_sexo" nillable="true" type="string"/>
+               <element name="dds_telef1" nillable="true" type="string"/>
+               <element name="dds_telef2" nillable="true" type="string"/>
+               <element name="dds_telef3" nillable="true" type="string"/>
+               <element name="dds_userna" nillable="true" type="string"/>
+               <element name="declara" nillable="true" type="string"/>
+               <element name="desc_cierre" nillable="true" type="string"/>
+               <element name="desc_comext" nillable="true" type="string"/>
+               <element name="desc_contab" nillable="true" type="string"/>
+               <element name="desc_docide" nillable="true" type="string"/>
+               <element name="desc_domici" nillable="true" type="string"/>
+               <element name="desc_factur" nillable="true" type="string"/>
+               <element name="desc_motbaj" nillable="true" type="string"/>
+               <element name="desc_nacion" nillable="true" type="string"/>
+               <element name="desc_orient" nillable="true" type="string"/>
+               <element name="desc_sexo" nillable="true" type="string"/>
+            </sequence>
+         </complexType>
+         <complexType name="BeanT1144">
+            <sequence>
+               <element name="cod_ciiu2" nillable="true" type="string"/>
+               <element name="cod_ciiu3" nillable="true" type="string"/>
+               <element name="cod_correo1" nillable="true" type="string"/>
+               <element name="cod_correo2" nillable="true" type="string"/>
+               <element name="cod_depar1" nillable="true" type="string"/>
+               <element name="cod_depar2" nillable="true" type="string"/>
+               <element name="cod_depar3" nillable="true" type="string"/>
+               <element name="cod_depar4" nillable="true" type="string"/>
+               <element name="cod_depar5" nillable="true" type="string"/>
+               <element name="cod_paicap" nillable="true" type="string"/>
+               <element name="cod_paiori" nillable="true" type="string"/>
+               <element name="cod_userna" nillable="true" type="string"/>
+               <element name="des_asiento" nillable="true" type="string"/>
+               <element name="des_ciiu2" nillable="true" type="string"/>
+               <element name="des_ciiu3" nillable="true" type="string"/>
+               <element name="des_conleg" nillable="true" type="string"/>
+               <element name="des_depar1" nillable="true" type="string"/>
+               <element name="des_depar2" nillable="true" type="string"/>
+               <element name="des_depar3" nillable="true" type="string"/>
+               <element name="des_depar4" nillable="true" type="string"/>
+               <element name="des_depar5" nillable="true" type="string"/>
+               <element name="des_parreg" nillable="true" type="string"/>
+               <element name="des_proind" nillable="true" type="string"/>
+               <element name="des_refnot" nillable="true" type="string"/>
+               <element name="fec_act" nillable="true" type="string"/>
+               <element name="fec_confir1" nillable="true" type="string"/>
+               <element name="fec_confir2" nillable="true" type="string"/>
+               <element name="ind_conleg" nillable="true" type="string"/>
+               <element name="ind_correo1" nillable="true" type="string"/>
+               <element name="ind_correo2" nillable="true" type="string"/>
+               <element name="ind_notifi" nillable="true" type="string"/>
+               <element name="ind_proind" nillable="true" type="string"/>
+               <element name="num_depar" nillable="true" type="string"/>
+               <element name="num_fax" nillable="true" type="string"/>
+               <element name="num_kilom" nillable="true" type="string"/>
+               <element name="num_lote" nillable="true" type="string"/>
+               <element name="num_manza" nillable="true" type="string"/>
+               <element name="num_ruc" nillable="true" type="string"/>
+               <element name="num_telef1" nillable="true" type="string"/>
+               <element name="num_telef2" nillable="true" type="string"/>
+               <element name="num_telef3" nillable="true" type="string"/>
+               <element name="num_telef4" nillable="true" type="string"/>
+            </sequence>
+         </complexType>
+         <complexType name="BeanRso">
+            <sequence>
+               <element name="cod_cargo" nillable="true" type="string"/>
+               <element name="cod_depar" nillable="true" type="string"/>
+               <element name="desc_docide" nillable="true" type="string"/>
+               <element name="num_ord_suce" type="short"/>
+               <element name="rso_cargoo" nillable="true" type="string"/>
+               <element name="rso_docide" nillable="true" type="string"/>
+               <element name="rso_fecact" nillable="true" type="string"/>
+               <element name="rso_fecnac" nillable="true" type="string"/>
+               <element name="rso_nombre" nillable="true" type="string"/>
+               <element name="rso_nrodoc" nillable="true" type="string"/>
+               <element name="rso_numruc" nillable="true" type="string"/>
+               <element name="rso_userna" nillable="true" type="string"/>
+               <element name="rso_vdesde" nillable="true" type="string"/>
+            </sequence>
+         </complexType>
+         <complexType name="BeanSpr">
+            <sequence>
+               <element name="cod_dep" nillable="true" type="string"/>
+               <element name="cod_dist" nillable="true" type="string"/>
+               <element name="cod_prov" nillable="true" type="string"/>
+               <element name="desc_dep" nillable="true" type="string"/>
+               <element name="desc_dist" nillable="true" type="string"/>
+               <element name="desc_prov" nillable="true" type="string"/>
+               <element name="desc_tipest" nillable="true" type="string"/>
+               <element name="desc_tipvia" nillable="true" type="string"/>
+               <element name="desc_tipzon" nillable="true" type="string"/>
+               <element name="direccion" nillable="true" type="string"/>
+               <element name="spr_correl" type="int"/>
+               <element name="spr_fecact" nillable="true" type="string"/>
+               <element name="spr_inter1" nillable="true" type="string"/>
+               <element name="spr_licenc" nillable="true" type="string"/>
+               <element name="spr_nombre" nillable="true" type="string"/>
+               <element name="spr_nomvia" nillable="true" type="string"/>
+               <element name="spr_nomzon" nillable="true" type="string"/>
+               <element name="spr_numer1" nillable="true" type="string"/>
+               <element name="spr_numruc" nillable="true" type="string"/>
+               <element name="spr_refer1" nillable="true" type="string"/>
+               <element name="spr_tipest" nillable="true" type="string"/>
+               <element name="spr_tipvia" nillable="true" type="string"/>
+               <element name="spr_tipzon" nillable="true" type="string"/>
+               <element name="spr_ubigeo" nillable="true" type="string"/>
+               <element name="spr_userna" nillable="true" type="string"/>
+            </sequence>
+         </complexType>
+         <complexType name="BeanT1150">
+            <sequence>
+               <element name="cod_userna" nillable="true" type="string"/>
+               <element name="fec_act" nillable="true" type="string"/>
+               <element name="ind_conleg" nillable="true" type="string"/>
+               <element name="num_correl" type="short"/>
+               <element name="num_depar" nillable="true" type="string"/>
+               <element name="num_kilom" nillable="true" type="string"/>
+               <element name="num_lote" nillable="true" type="string"/>
+               <element name="num_manza" nillable="true" type="string"/>
+               <element name="num_ruc" nillable="true" type="string"/>
+            </sequence>
+         </complexType>
+         <complexType name="BeanT362">
+            <sequence>
+               <element name="desc_numreg" nillable="true" type="string"/>
+               <element name="t362_fecact" nillable="true" type="string"/>
+               <element name="t362_fecbaj" nillable="true" type="string"/>
+               <element name="t362_indice" type="int"/>
+               <element name="t362_nombre" nillable="true" type="string"/>
+               <element name="t362_numreg" nillable="true" type="string"/>
+               <element name="t362_numruc" nillable="true" type="string"/>
+               <element name="t362_userna" nillable="true" type="string"/>
+            </sequence>
+         </complexType>
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns6="http://wscr.sunat.gob.pe:90/cl-ti-iaconsulruc-ws/services/ConsultaRuc" xmlns:ns5="http://wscr.sunat.gob.pe:90/cl-ti-iaconsulruc-ws/services/ConsultaRuc" xmlns:ns8="http://bean.consultaruc.registro.servicio2.sunat.gob.pe" xmlns:ns7="http://bean.consultaruc.registro.servicio2.sunat.gob.pe" xmlns:ns9="http://wscr.sunat.gob.pe:90/cl-ti-iaconsulruc-ws/services/ConsultaRuc" xmlns:ns2="http://wscr.sunat.gob.pe:90/cl-ti-iaconsulruc-ws/services/ConsultaRuc" xmlns:ns4="http://bean.consultaruc.registro.servicio2.sunat.gob.pe" xmlns:ns3="http://wscr.sunat.gob.pe:90/cl-ti-iaconsulruc-ws/services/ConsultaRuc" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://wscr.sunat.gob.pe:90/cl-ti-iaconsulruc-ws/services/ConsultaRuc">
+         <import namespace="http://bean.consultaruc.registro.servicio2.sunat.gob.pe"/>
+         <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+         <import namespace="http://bean.consultaruc.registro.servicio2.sunat.gob.pe"/>
+         <import namespace="http://bean.consultaruc.registro.servicio2.sunat.gob.pe"/>
+         <import namespace="http://bean.consultaruc.registro.servicio2.sunat.gob.pe"/>
+         <complexType name="ArrayOf_tns1_BeanRso">
+            <complexContent>
+               <restriction base="soapenc:Array">
+                  <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:BeanRso[]"/>
+               </restriction>
+            </complexContent>
+         </complexType>
+         <complexType name="ArrayOf_tns1_BeanSpr">
+            <complexContent>
+               <restriction base="soapenc:Array">
+                  <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:BeanSpr[]"/>
+               </restriction>
+            </complexContent>
+         </complexType>
+         <complexType name="ArrayOf_tns1_BeanT1150">
+            <complexContent>
+               <restriction base="soapenc:Array">
+                  <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:BeanT1150[]"/>
+               </restriction>
+            </complexContent>
+         </complexType>
+         <complexType name="ArrayOf_tns1_BeanDdp">
+            <complexContent>
+               <restriction base="soapenc:Array">
+                  <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:BeanDdp[]"/>
+               </restriction>
+            </complexContent>
+         </complexType>
+         <complexType name="ArrayOf_tns1_BeanT362">
+            <complexContent>
+               <restriction base="soapenc:Array">
+                  <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:BeanT362[]"/>
+               </restriction>
+            </complexContent>
+         </complexType>
+         <element name="getEstablecimientosAnexosResponse">
+            <complexType>
+               <sequence>
+                  <element form="unqualified" name="getEstablecimientosAnexosReturn" nillable="true" type="intf:ArrayOf_tns1_BeanSpr"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="getRepLegalesResponse">
+            <complexType>
+               <sequence>
+                  <element form="unqualified" name="getRepLegalesReturn" nillable="true" type="intf:ArrayOf_tns1_BeanRso"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="getDatosPrincipalesResponse">
+            <complexType>
+               <sequence>
+                  <element form="unqualified" name="getDatosPrincipalesReturn" nillable="true" type="tns1:BeanDdp"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="getDomicilioLegalResponse">
+            <complexType>
+               <sequence>
+                  <element form="unqualified" name="getDomicilioLegalReturn" nillable="true" type="string"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="getEstAnexosT1150Response">
+            <complexType>
+               <sequence>
+                  <element form="unqualified" name="getEstAnexosT1150Return" nillable="true" type="intf:ArrayOf_tns1_BeanT1150"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="buscaRazonSocialResponse">
+            <complexType>
+               <sequence>
+                  <element form="unqualified" name="buscaRazonSocialReturn" nillable="true" type="intf:ArrayOf_tns1_BeanDdp"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="setServicioConsultaRucServiceResponse">
+            <complexType>
+               <sequence/>
+            </complexType>
+         </element>
+         <element name="getDatosT1144Response">
+            <complexType>
+               <sequence>
+                  <element form="unqualified" name="getDatosT1144Return" nillable="true" type="tns1:BeanT1144"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="getDatosSecundariosResponse">
+            <complexType>
+               <sequence>
+                  <element form="unqualified" name="getDatosSecundariosReturn" nillable="true" type="tns1:BeanDds"/>
+               </sequence>
+            </complexType>
+         </element>
+         <element name="getDatosT362Response">
+            <complexType>
+               <sequence>
+                  <element form="unqualified" name="getDatosT362Return" nillable="true" type="intf:ArrayOf_tns1_BeanT362"/>
+               </sequence>
+            </complexType>
+         </element>
+      </schema>
+      <xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://service.consultaruc.registro.servicio2.sunat.gob.pe">
+         <xsd:element name="getEstablecimientosAnexos">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element form="unqualified" name="numruc" nillable="true" type="xsd:string"/>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="getRepLegales">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element form="unqualified" name="numruc" nillable="true" type="xsd:string"/>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="getDatosPrincipales">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element form="unqualified" name="numruc" nillable="true" type="xsd:string"/>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="getDomicilioLegal">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element form="unqualified" name="numruc" nillable="true" type="xsd:string"/>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="getEstAnexosT1150">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element form="unqualified" name="numruc" nillable="true" type="xsd:string"/>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="buscaRazonSocial">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element form="unqualified" name="numruc" nillable="true" type="xsd:string"/>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="setServicioConsultaRucService">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element form="unqualified" name="servicioConsultaRucService" nillable="true" type="xsd:anyType"/>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="getDatosT1144">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element form="unqualified" name="numruc" nillable="true" type="xsd:string"/>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="getDatosSecundarios">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element form="unqualified" name="numruc" nillable="true" type="xsd:string"/>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="getDatosT362">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element form="unqualified" name="numruc" nillable="true" type="xsd:string"/>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="buscaRazonSocialRequest">
+      <wsdl:part name="parameters" element="axis2wrapped:buscaRazonSocial"/>
+   </wsdl:message>
+   <wsdl:message name="buscaRazonSocialResponse">
+      <wsdl:part name="parameters" element="impl:buscaRazonSocialResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getDatosT362Request">
+      <wsdl:part name="parameters" element="axis2wrapped:getDatosT362"/>
+   </wsdl:message>
+   <wsdl:message name="getDatosT362Response">
+      <wsdl:part name="parameters" element="impl:getDatosT362Response"/>
+   </wsdl:message>
+   <wsdl:message name="getDomicilioLegalRequest">
+      <wsdl:part name="parameters" element="axis2wrapped:getDomicilioLegal"/>
+   </wsdl:message>
+   <wsdl:message name="getDomicilioLegalResponse">
+      <wsdl:part name="parameters" element="impl:getDomicilioLegalResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getEstablecimientosAnexosRequest">
+      <wsdl:part name="parameters" element="axis2wrapped:getEstablecimientosAnexos"/>
+   </wsdl:message>
+   <wsdl:message name="getEstablecimientosAnexosResponse">
+      <wsdl:part name="parameters" element="impl:getEstablecimientosAnexosResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getDatosT1144Request">
+      <wsdl:part name="parameters" element="axis2wrapped:getDatosT1144"/>
+   </wsdl:message>
+   <wsdl:message name="getDatosT1144Response">
+      <wsdl:part name="parameters" element="impl:getDatosT1144Response"/>
+   </wsdl:message>
+   <wsdl:message name="setServicioConsultaRucServiceRequest">
+      <wsdl:part name="parameters" element="axis2wrapped:setServicioConsultaRucService"/>
+   </wsdl:message>
+   <wsdl:message name="setServicioConsultaRucServiceResponse">
+      <wsdl:part name="parameters" element="impl:setServicioConsultaRucServiceResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getRepLegalesRequest">
+      <wsdl:part name="parameters" element="axis2wrapped:getRepLegales"/>
+   </wsdl:message>
+   <wsdl:message name="getRepLegalesResponse">
+      <wsdl:part name="parameters" element="impl:getRepLegalesResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getDatosPrincipalesRequest">
+      <wsdl:part name="parameters" element="axis2wrapped:getDatosPrincipales"/>
+   </wsdl:message>
+   <wsdl:message name="getDatosPrincipalesResponse">
+      <wsdl:part name="parameters" element="impl:getDatosPrincipalesResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getDatosSecundariosRequest">
+      <wsdl:part name="parameters" element="axis2wrapped:getDatosSecundarios"/>
+   </wsdl:message>
+   <wsdl:message name="getDatosSecundariosResponse">
+      <wsdl:part name="parameters" element="impl:getDatosSecundariosResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getEstAnexosT1150Request">
+      <wsdl:part name="parameters" element="axis2wrapped:getEstAnexosT1150"/>
+   </wsdl:message>
+   <wsdl:message name="getEstAnexosT1150Response">
+      <wsdl:part name="parameters" element="impl:getEstAnexosT1150Response"/>
+   </wsdl:message>
+   <wsdl:portType name="SunatConsultaRucPortType">
+      <wsdl:operation name="buscaRazonSocial">
+         <wsdl:input message="impl:buscaRazonSocialRequest" wsaw:Action="buscaRazonSocial"/>
+         <wsdl:output message="impl:buscaRazonSocialResponse" wsaw:Action="http://wscr.sunat.gob.pe:90/cl-ti-iaconsulruc-ws/services/ConsultaRuc/ConsultaRucSoapBindingImpl/buscaRazonSocialResponse"/>
+      </wsdl:operation>
+      <wsdl:operation name="getDatosT362">
+         <wsdl:input message="impl:getDatosT362Request" wsaw:Action="getDatosT362"/>
+         <wsdl:output message="impl:getDatosT362Response" wsaw:Action="http://wscr.sunat.gob.pe:90/cl-ti-iaconsulruc-ws/services/ConsultaRuc/ConsultaRucSoapBindingImpl/getDatosT362Response"/>
+      </wsdl:operation>
+      <wsdl:operation name="getDomicilioLegal">
+         <wsdl:input message="impl:getDomicilioLegalRequest" wsaw:Action="getDomicilioLegal"/>
+         <wsdl:output message="impl:getDomicilioLegalResponse" wsaw:Action="http://wscr.sunat.gob.pe:90/cl-ti-iaconsulruc-ws/services/ConsultaRuc/ConsultaRucSoapBindingImpl/getDomicilioLegalResponse"/>
+      </wsdl:operation>
+      <wsdl:operation name="getEstablecimientosAnexos">
+         <wsdl:input message="impl:getEstablecimientosAnexosRequest" wsaw:Action="getEstablecimientosAnexos"/>
+         <wsdl:output message="impl:getEstablecimientosAnexosResponse" wsaw:Action="http://wscr.sunat.gob.pe:90/cl-ti-iaconsulruc-ws/services/ConsultaRuc/ConsultaRucSoapBindingImpl/getEstablecimientosAnexosResponse"/>
+      </wsdl:operation>
+      <wsdl:operation name="getDatosT1144">
+         <wsdl:input message="impl:getDatosT1144Request" wsaw:Action="getDatosT1144"/>
+         <wsdl:output message="impl:getDatosT1144Response" wsaw:Action="http://wscr.sunat.gob.pe:90/cl-ti-iaconsulruc-ws/services/ConsultaRuc/ConsultaRucSoapBindingImpl/getDatosT1144Response"/>
+      </wsdl:operation>
+      <wsdl:operation name="setServicioConsultaRucService">
+         <wsdl:input message="impl:setServicioConsultaRucServiceRequest" wsaw:Action="setServicioConsultaRucService"/>
+         <wsdl:output message="impl:setServicioConsultaRucServiceResponse" wsaw:Action="http://wscr.sunat.gob.pe:90/cl-ti-iaconsulruc-ws/services/ConsultaRuc/ConsultaRucSoapBindingImpl/setServicioConsultaRucServiceResponse"/>
+      </wsdl:operation>
+      <wsdl:operation name="getRepLegales">
+         <wsdl:input message="impl:getRepLegalesRequest" wsaw:Action="getRepLegales"/>
+         <wsdl:output message="impl:getRepLegalesResponse" wsaw:Action="http://wscr.sunat.gob.pe:90/cl-ti-iaconsulruc-ws/services/ConsultaRuc/ConsultaRucSoapBindingImpl/getRepLegalesResponse"/>
+      </wsdl:operation>
+      <wsdl:operation name="getDatosPrincipales">
+         <wsdl:input message="impl:getDatosPrincipalesRequest" wsaw:Action="getDatosPrincipales"/>
+         <wsdl:output message="impl:getDatosPrincipalesResponse" wsaw:Action="http://wscr.sunat.gob.pe:90/cl-ti-iaconsulruc-ws/services/ConsultaRuc/ConsultaRucSoapBindingImpl/getDatosPrincipalesResponse"/>
+      </wsdl:operation>
+      <wsdl:operation name="getDatosSecundarios">
+         <wsdl:input message="impl:getDatosSecundariosRequest" wsaw:Action="getDatosSecundarios"/>
+         <wsdl:output message="impl:getDatosSecundariosResponse" wsaw:Action="http://wscr.sunat.gob.pe:90/cl-ti-iaconsulruc-ws/services/ConsultaRuc/ConsultaRucSoapBindingImpl/getDatosSecundariosResponse"/>
+      </wsdl:operation>
+      <wsdl:operation name="getEstAnexosT1150">
+         <wsdl:input message="impl:getEstAnexosT1150Request" wsaw:Action="getEstAnexosT1150"/>
+         <wsdl:output message="impl:getEstAnexosT1150Response" wsaw:Action="http://wscr.sunat.gob.pe:90/cl-ti-iaconsulruc-ws/services/ConsultaRuc/ConsultaRucSoapBindingImpl/getEstAnexosT1150Response"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="SunatConsultaRucSoap11Binding" type="impl:SunatConsultaRucPortType">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="buscaRazonSocial">
+         <soap:operation soapAction="buscaRazonSocial" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getDatosT362">
+         <soap:operation soapAction="getDatosT362" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getDomicilioLegal">
+         <soap:operation soapAction="getDomicilioLegal" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getEstablecimientosAnexos">
+         <soap:operation soapAction="getEstablecimientosAnexos" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getDatosT1144">
+         <soap:operation soapAction="getDatosT1144" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="setServicioConsultaRucService">
+         <soap:operation soapAction="setServicioConsultaRucService" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getRepLegales">
+         <soap:operation soapAction="getRepLegales" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getDatosPrincipales">
+         <soap:operation soapAction="getDatosPrincipales" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getDatosSecundarios">
+         <soap:operation soapAction="getDatosSecundarios" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getEstAnexosT1150">
+         <soap:operation soapAction="getEstAnexosT1150" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="SunatConsultaRuc">
+      <wsdl:port name="SunatConsultaRucHttpsSoap11Endpoint" binding="impl:SunatConsultaRucSoap11Binding">
+         <soap:address location="https://ws3.pide.gob.pe/services/SunatConsultaRuc.SunatConsultaRucHttpsSoap11Endpoint"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>
+-->
