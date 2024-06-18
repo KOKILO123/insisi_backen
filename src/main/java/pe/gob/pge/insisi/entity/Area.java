@@ -2,18 +2,17 @@ package pe.gob.pge.insisi.entity;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @Entity
 @Table(name = "AREA")
 public class Area {
     @Id
-    @Column(name="areaId")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="areaid")
     private Long areaId;
     @Column(name="nombre")
     private String nombre;
@@ -22,9 +21,9 @@ public class Area {
     @Column(name="estado")
     private Integer estado;
     @Column(name="createdat")
-    private LocalDateTime createdAt;
+    private Date createdAt;
     @Column(name="updatedat")
-    private LocalDateTime updatedAt;
+    private Date updatedAt;
     @Column(name="createdby")
     private Long createdBy;
     @Column(name="updatedby")

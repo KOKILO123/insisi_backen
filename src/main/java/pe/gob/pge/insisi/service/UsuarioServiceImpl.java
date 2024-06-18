@@ -45,7 +45,7 @@ public class UsuarioServiceImpl implements UsuarioService {
         tabla.setCreatedAt(MetodosGenerales.capturarFechaActual());
         //tabla.setCreatedBy(MetodosGenerales.captutarUsuarioID(usuarioSesionRepositorio));
 
-        System.out.println(tabla);
+        System.out.println("tablaaaa "+tabla);
 
         Usuario nuevo = usuarioRepositorio.save(tabla);
         UsuarioDTO respuesta = mapearDTO(nuevo);

@@ -1,7 +1,14 @@
 package pe.gob.pge.insisi.dto;
 
+import lombok.*;
+
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class TipoUsuarioDTO {
     private Long tipoUsuarioId;
     private String nombre;

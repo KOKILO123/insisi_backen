@@ -2,12 +2,14 @@ package pe.gob.pge.insisi.entity;
 import lombok.Data;
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @Entity
 @Table(name = "INSTITUCION")
 public class Institucion {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="institucionid")
     private Long institucionId;
     @Column(name="nombre")
@@ -19,9 +21,9 @@ public class Institucion {
     @Column(name="estado")
     private Integer estado;
     @Column(name="createdat")
-    private LocalDateTime createdAt;
+    private Date createdAt;
     @Column(name="updatedat")
-    private LocalDateTime updatedAt;
+    private Date updatedAt;
     @Column(name="createdby")
     private Long createdBy;
     @Column(name="updatedby")
