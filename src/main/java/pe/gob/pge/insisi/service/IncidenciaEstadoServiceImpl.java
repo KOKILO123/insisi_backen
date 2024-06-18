@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.gob.pge.insisi.dto.IncidenciaEstadoDTO;
+import pe.gob.pge.insisi.dto.RequestBodyIncidenciaEstado;
 import pe.gob.pge.insisi.entity.IncidenciaEstado;
 import pe.gob.pge.insisi.exception.ResourceNotFoundException;
 import pe.gob.pge.insisi.repository.IncidenciaEstadoRepositorio;
@@ -23,27 +24,15 @@ public class IncidenciaEstadoServiceImpl implements IncidenciaEstadoService {
     private UsuarioSesionRepositorio usuarioSesionRepositorio;
 
     @Override
-    public IncidenciaEstadoDTO create(IncidenciaEstadoDTO tablaDTO) {
+    public IncidenciaEstadoDTO create(RequestBodyIncidenciaEstado tablaDTO) {
 
         IncidenciaEstado tabla=new IncidenciaEstado();
-        //IncidenciaEstado tabla = mapearEntidad(IncidenciaEstadoDTO);
-       /* tabla.setInstitucionId(tablaDTO.getInstitucionId());
-        tabla.setAreaId(tablaDTO.getAreaId());
-        tabla.setTipoIncidenciaEstadoId(tablaDTO.getTipoIncidenciaEstadoid());
         tabla.setNombre(tablaDTO.getNombre());
-        tabla.setIncidenciaEstado(tablaDTO.getIncidenciaEstado());
-        tabla.setClave(tablaDTO.getClave());*/
+        tabla.setDescripcion(tablaDTO.getDescripcion());
         tabla.setEstado(1);
 
-        System.out.println(MetodosGenerales.capturarFechaActual());
-
-       // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        //String formattedNow = MetodosGenerales.capturarFechaActual().format(formatter);
-        //System.out.println(formattedNow);
         tabla.setCreatedAt(MetodosGenerales.capturarFechaActual());
-        tabla.setCreatedBy(MetodosGenerales.captutarUsuarioID(usuarioSesionRepositorio));
-
-        System.out.println(tabla);
+        //tabla.setCreatedBy(MetodosGenerales.captutarUsuarioID(usuarioSesionRepositorio));
 
         IncidenciaEstado nuevo = incidenciaEstadoRepositorio.save(tabla);
         IncidenciaEstadoDTO respuesta = mapearDTO(nuevo);

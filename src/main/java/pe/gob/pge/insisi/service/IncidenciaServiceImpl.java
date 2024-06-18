@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.gob.pge.insisi.dto.IncidenciaDTO;
+import pe.gob.pge.insisi.dto.RequestBodyIncidencia;
 import pe.gob.pge.insisi.entity.Incidencia;
 import pe.gob.pge.insisi.exception.ResourceNotFoundException;
 import pe.gob.pge.insisi.repository.IncidenciaRepositorio;
@@ -23,16 +24,14 @@ public class IncidenciaServiceImpl implements IncidenciaService {
     private UsuarioSesionRepositorio usuarioSesionRepositorio;
 
     @Override
-    public IncidenciaDTO create(IncidenciaDTO tablaDTO) {
+    public IncidenciaDTO create(RequestBodyIncidencia tablaDTO) {
 
         Incidencia tabla=new Incidencia();
-        //Incidencia tabla = mapearEntidad(IncidenciaDTO);
-       /* tabla.setInstitucionId(tablaDTO.getInstitucionId());
-        tabla.setAreaId(tablaDTO.getAreaId());
-        tabla.setTipoIncidenciaId(tablaDTO.getTipoIncidenciaid());
-        tabla.setNombre(tablaDTO.getNombre());
-        tabla.setIncidencia(tablaDTO.getIncidencia());
-        tabla.setClave(tablaDTO.getClave());*/
+        tabla.setTipoIncidenciaId(tablaDTO.getTipoIncidenciaId());
+        tabla.setAreaId(tablaDTO.getAreId());
+        tabla.setPrioridadId(tablaDTO.getPrioridadId());
+        //tabla.setFechaSolicitado(tablaDTO.getFechaSolicitado());
+        tabla.setDescripcion(tablaDTO.getDescripcion());
         tabla.setEstado(1);
 
         System.out.println(MetodosGenerales.capturarFechaActual());
@@ -41,7 +40,7 @@ public class IncidenciaServiceImpl implements IncidenciaService {
         //String formattedNow = MetodosGenerales.capturarFechaActual().format(formatter);
         //System.out.println(formattedNow);
         tabla.setCreatedAt(MetodosGenerales.capturarFechaActual());
-        tabla.setCreatedBy(MetodosGenerales.captutarUsuarioID(usuarioSesionRepositorio));
+        //tabla.setCreatedBy(MetodosGenerales.captutarUsuarioID(usuarioSesionRepositorio));
 
         System.out.println(tabla);
 
