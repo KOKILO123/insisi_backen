@@ -2,6 +2,7 @@
 
  import pe.gob.pge.insisi.dto.IncidenciaDTO;
  import pe.gob.pge.insisi.dto.RequestBodyIncidencia;
+ import pe.gob.pge.insisi.projection.DashboardProjection;
 
  import java.util.List;
 
@@ -13,5 +14,7 @@
      public IncidenciaDTO update(IncidenciaDTO tablaDTO, long id);
      public IncidenciaDTO cambioEstado(long id);
      public void delete(long id);
+
+     public List<DashboardProjection> getListDashboard(Integer estado);
 
  }

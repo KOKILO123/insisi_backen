@@ -7,6 +7,7 @@ import pe.gob.pge.insisi.dto.IncidenciaDTO;
 import pe.gob.pge.insisi.dto.RequestBodyIncidencia;
 import pe.gob.pge.insisi.entity.Incidencia;
 import pe.gob.pge.insisi.exception.ResourceNotFoundException;
+import pe.gob.pge.insisi.projection.DashboardProjection;
 import pe.gob.pge.insisi.repository.IncidenciaRepositorio;
 import pe.gob.pge.insisi.repository.UsuarioSesionRepositorio;
 import pe.gob.pge.insisi.utility.MetodosGenerales;
@@ -99,6 +100,13 @@ public class IncidenciaServiceImpl implements IncidenciaService {
         incidenciaRepositorio.delete(tabla);
     }
 
+
+    @Override
+    public List<DashboardProjection> getListDashboard(Integer estado) {
+        List<DashboardProjection> tablas = incidenciaRepositorio.getListDashboard(estado);
+        return tablas;
+        //return Collections.emptyList();
+    }
 
 
 
