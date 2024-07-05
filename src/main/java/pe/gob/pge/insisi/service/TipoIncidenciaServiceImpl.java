@@ -27,7 +27,7 @@ public class TipoIncidenciaServiceImpl implements TipoIncidenciaService {
     public TipoIncidenciaDTO create(RequestBodyTipoIncidencia tablaDTO) {
 
         TipoIncidencia tabla=new TipoIncidencia();
-        tabla.setAplicacionId(tablaDTO.getApliacionId());
+        tabla.setAplicacionId(tablaDTO.getAplicacionId());
         tabla.setNombre(tablaDTO.getNombre());
         tabla.setDescripcion(tablaDTO.getDescripcion());
         tabla.setEstado(1);

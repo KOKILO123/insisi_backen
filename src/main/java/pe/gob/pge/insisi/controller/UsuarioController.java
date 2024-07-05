@@ -23,7 +23,7 @@ public class UsuarioController {
 
     @GetMapping("/list")
     public List<UsuarioDTO> listTabla(){
-        System.out.println("llega");
+        System.out.println("llega UsuarioDTO");
         return usuarioService.list();
     }
 

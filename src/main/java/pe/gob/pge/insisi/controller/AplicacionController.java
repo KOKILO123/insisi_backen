@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.gob.pge.insisi.dto.AplicacionDTO;
+import pe.gob.pge.insisi.dto.AplicacionListDTO;
 import pe.gob.pge.insisi.dto.RequestBodyAplicacion;
 import pe.gob.pge.insisi.service.AplicacionService;
 
@@ -21,8 +22,9 @@ public class AplicacionController {
 
 
     @GetMapping("/list")
-    public List<AplicacionDTO> listTabla(){
-        System.out.println("llega");
+    public List<AplicacionListDTO> listTabla(){
+        System.out.println("llega AplicacionListDTO");
+        System.out.println("apl   "+aplicacionService.list());
         return aplicacionService.list();
     }
 
@@ -33,7 +35,7 @@ public class AplicacionController {
 
     @PostMapping("/create")
     public ResponseEntity<AplicacionDTO> createTabla(@RequestBody RequestBodyAplicacion tablaDTO) {
-        System.out.println("Aplicacion");
+        System.out.println("Aplicacion ");
         return new ResponseEntity<>(aplicacionService.create(tablaDTO), HttpStatus.CREATED);
     }
 

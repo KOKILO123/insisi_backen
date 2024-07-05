@@ -22,7 +22,7 @@ public class PrioridadController {
 
     @GetMapping("/list")
     public List<PrioridadDTO> listTabla(){
-        System.out.println("llega");
+        System.out.println("llega PrioridadDTO");
         return prioridadService.list();
     }
 

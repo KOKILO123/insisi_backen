@@ -22,7 +22,7 @@ public class AreaController {
 
     @GetMapping("/list")
     public List<AreaDTO> listTabla(){
-        System.out.println("llega");
+        System.out.println("llega AreaDTO");
         return AreaService.list();
     }
 

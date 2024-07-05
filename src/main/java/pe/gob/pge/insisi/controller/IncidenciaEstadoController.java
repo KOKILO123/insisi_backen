@@ -22,7 +22,7 @@ public class IncidenciaEstadoController {
 
     @GetMapping("/list")
     public List<IncidenciaEstadoDTO> listTabla(){
-        System.out.println("llega");
+        System.out.println("llega IncidenciaEstadoDTO" );
         return incidenciaEstadoService.list();
     }
 

@@ -24,7 +24,7 @@ public class DashboardController {
 
     @GetMapping("/list/{estado}")
     public List<DashboardProjection> listTabla(@PathVariable(name = "estado") Integer estado){
-        System.out.println("llega");
+        System.out.println("llega DashboardProjection");
         return incidenciaService.getListDashboard(estado);
     }
 

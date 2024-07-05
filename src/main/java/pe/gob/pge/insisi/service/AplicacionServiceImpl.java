@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.gob.pge.insisi.dto.AplicacionDTO;
+import pe.gob.pge.insisi.dto.AplicacionListDTO;
 import pe.gob.pge.insisi.dto.RequestBodyAplicacion;
 import pe.gob.pge.insisi.entity.Aplicacion;
 import pe.gob.pge.insisi.exception.ResourceNotFoundException;
@@ -11,6 +12,7 @@ import pe.gob.pge.insisi.repository.AplicacionRepositorio;
 import pe.gob.pge.insisi.repository.UsuarioSesionRepositorio;
 import pe.gob.pge.insisi.utility.MetodosGenerales;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -43,10 +45,22 @@ public class AplicacionServiceImpl implements AplicacionService {
     }
 
     @Override
-    public List<AplicacionDTO> list() {
+    public List<AplicacionListDTO> list() {
         List<Aplicacion> tablas = aplicacionRepositorio.list();
-        return tablas.stream().map(tabla -> mapearDTO(tabla)).collect(Collectors.toList());
-        //return Collections.emptyList();
+
+        List<AplicacionListDTO> aplicacionListDTOS=new ArrayList<>();
+
+        for (Aplicacion aplicacion : tablas) {
+            AplicacionListDTO aplicacionListDTO=new AplicacionListDTO();
+            aplicacionListDTO.setAplicacionId(aplicacion.getAplicacionId());
+            aplicacionListDTO.setNombre(aplicacion.getNombre());
+            aplicacionListDTO.setDescripcion(aplicacion.getDescripcion());
+            aplicacionListDTO.setEstado(aplicacion.getEstado());
+            aplicacionListDTOS.add(aplicacionListDTO);
+        }
+
+        //return tablas.stream().map(tabla -> mapear2DTO(tabla)).collect(Collectors.toList());
+        return aplicacionListDTOS;
     }
 
     @Override
@@ -102,5 +116,10 @@ public class AplicacionServiceImpl implements AplicacionService {
     private Aplicacion mapearEntidad(AplicacionDTO tablaDTO) {
         Aplicacion tabla = modelMapper.map(tablaDTO, Aplicacion.class);
         return tabla;
+    }
+
+    private AplicacionListDTO mapear2DTO(Aplicacion tabla) {
+        AplicacionListDTO tablaDTO = modelMapper.map(tabla, AplicacionListDTO.class);
+        return tablaDTO;
     }
 }
