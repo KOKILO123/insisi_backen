@@ -12,6 +12,7 @@ import pe.gob.pge.insisi.repository.IncidenciaRepositorio;
 import pe.gob.pge.insisi.repository.UsuarioSesionRepositorio;
 import pe.gob.pge.insisi.utility.MetodosGenerales;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,9 +30,10 @@ public class IncidenciaServiceImpl implements IncidenciaService {
 
         Incidencia tabla=new Incidencia();
         tabla.setTipoIncidenciaId(tablaDTO.getTipoIncidenciaId());
-        tabla.setAreaId(tablaDTO.getAreId());
+        tabla.setAreaId(tablaDTO.getAreaId());
         tabla.setPrioridadId(tablaDTO.getPrioridadId());
-        //tabla.setFechaSolicitado(tablaDTO.getFechaSolicitado());
+        tabla.setUsuarioId(tablaDTO.getUsuarioId());
+        tabla.setFechaSolicitado(LocalDateTime.now());
         tabla.setDescripcion(tablaDTO.getDescripcion());
         tabla.setEstado(1);
 

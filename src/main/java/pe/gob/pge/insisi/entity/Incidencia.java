@@ -14,12 +14,14 @@ public class Incidencia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="incidenciaid")
     private Long incidenciaId;
-    @Column(name="tipoIncidenciaid")
+    @Column(name="tipoincidenciaid")
     private Long tipoIncidenciaId;
     @Column(name="areaid")
     private Long areaId;
     @Column(name="prioridadid")
     private Long prioridadId;
+    @Column(name="usuarioid")
+    private Long usuarioId;
     @Column(name="fechasolicitado")
     private LocalDateTime fechaSolicitado;
     @Column(name="descripcion")

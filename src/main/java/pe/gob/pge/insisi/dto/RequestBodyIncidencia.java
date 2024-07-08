@@ -11,9 +11,10 @@ import java.util.Date;
 @ToString
 public class RequestBodyIncidencia {
     private Long tipoIncidenciaId;
-    private Long areId;
+    private Long areaId;
     private Long prioridadId;
-    private Date fechaSolicitado;
+    private Long usuarioId;
+    private String fechaSolicitado;
     private String descripcion;
     private Integer estado;
 }

@@ -14,6 +14,7 @@ public class IncidenciaDTO {
     private Long tipoIncidenciaId;
     private Long areaId;
     private Long prioridadId;
+    private Long usuarioId;
     private LocalDateTime fechaSolicitado;
     private String descripcion;
     private Integer estado;
